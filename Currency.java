@@ -6,7 +6,7 @@ import java.net.URL;
 
 public class Currency {
   Double val = 0.0;
-  public double getcurrency() throws IOException {
+  public static double getcurrency() throws IOException {
     URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/A/USD/last/1");
     HttpURLConnection test = (HttpURLConnection)url.openConnection();
     InputStreamReader isr = new InputStreamReader(test.getInputStream());

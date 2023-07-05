@@ -6,7 +6,7 @@ import java.net.URL;
 
 public class Gold {
   //api source = https://api.nbp.pl/en.html#info
-  private double  gold() throws IOException {
+  private static double  gold() throws IOException {
   URL url = new URL("http://api.nbp.pl/api/cenyzlota/last/1");
     HttpURLConnection test = (HttpURLConnection)url.openConnection();
     InputStreamReader isr = new InputStreamReader(test.getInputStream());
@@ -28,9 +28,8 @@ public class Gold {
     return gold();
   }
 
-  public double getgoldUSD() throws IOException {
-    Currency c = new Currency();
+  public static double getgoldUSD() throws IOException {
     Double price = gold();
-    return price / c.getcurrency();
+    return price / Currency.getcurrency();
   }
 }
